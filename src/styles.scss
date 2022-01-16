@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import './assets/scss/variable.scss';
+
+body{
+    position: relative;
+    background: $bodyTheme;
+    margin-top: 48px;
+}
+html{
+    min-height: 100%;
+}
+a:focus, button:focus{outline: none;}
+a:hover{text-decoration: none;}
+img{max-width: 100%;}
+.main-content{
+    padding: 30px 35px 30px 35px;
+    margin-left: 226px;
+    transition: margin 0.5s ease-in-out;
+    &.hide{
+        margin-left: 0;
+        .sidebar{
+            left: -242px;
+        }
+    }
+    &.show{
+        margin-left: 226px;
+        .sidebar{
+            left: 0;
+        }
+    }
+}
+.white-box{
+    margin-bottom: 25px;
+    background: #ffffff;
+    border: 1px solid #eaedf0;
+    padding: 30px 25px;
+}
+.loadPage{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 0 auto;
+    z-index: 5;
+    background: $bodyTheme;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.loader{
+    border:1.5px solid #c7e0f4;
+    border-radius: 50%;
+    border-top: 1.5px solid $themeDark;
+    width: 28px;
+    height: 28px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: 0 auto 5px;
+}
+@-webkit-keyframes spin{
+    0%{
+        -webkit-transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

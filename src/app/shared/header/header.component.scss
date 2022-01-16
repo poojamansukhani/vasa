@@ -1,0 +1,48 @@
+@import "src/styles";
+.header{
+    height: 48px;
+    background: $primary;
+    padding: 15px 0 15px 15px;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    .btn{
+        &:focus{outline: none;box-shadow: none;}
+    }
+    .ms-Icon{
+        font-size: 14px;
+    }
+    .logo{
+        font-weight: 600;
+        font-size: 16px;
+        color: $white;
+    }
+    .custom-dropdown{
+        .btn{
+            background: $primary;
+            height: 48px;
+            line-height: 0;
+            border-radius: 0;
+            &:focus{
+                outline: none;
+                box-shadow: none;
+            }
+            &::after{
+                display: none;
+            }
+            .btn[aria-expanded="true"]{
+                background: $themeDark;
+            }
+            .dropdown-menu{
+                cursor: pointer;
+                font-size: 14px;
+                padding: 8px;
+                line-height: 16px;
+                text-overflow: ellipsis;
+                &:hover{background: $neutralLight;}
+                &:active{color:$themeDark ;}
+            }
+        }
+
+    }
+}

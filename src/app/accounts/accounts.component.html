@@ -1,0 +1,61 @@
+<div *ngIf="appService.showLoadingScreen" class="loadPage">
+    <div class="loader"></div>
+    Loading...
+</div>
+<div class="white-box">
+    <div class="category d-flex justify-content-between">
+        <div class="sorting">
+            <div class="form-group">
+                <div class="selectBox">
+                    <select>
+                        <option>PHP</option>
+                        <option>SQL</option>
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>Java</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="selectBox">
+                    <select>
+                        <option>4*</option>
+                        <option>5*</option>
+                        <option>3*</option>
+                        <option>2*</option>
+                        <option>1*</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="search">
+            <div class="input-group">
+                <input class="form-control" name="search" id="search" placeholder="Search Here.." type="text"
+                [(ngModel)]="filterTerm">
+                <button type="button" class="input-group-addon"><i class="ms-Icon ms-Icon--Search "></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive content-table">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Skills</th>
+                    <th>Availability</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let account of accountData | filter:filterTerm">
+                    <td>{{account.name}}</td>
+                    <td><a href="email:{{account.email}}">{{account.email}}</a></td>
+                    <td>{{account.skills}}</td>
+                    <td>{{account.availability}}</td>
+                    <td>{{account.ratings}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

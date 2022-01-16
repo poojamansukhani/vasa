@@ -1,0 +1,7 @@
+<app-header></app-header>
+<main class="main">
+  <div class="main-content" [ngClass]="navNew ? 'hide' : 'show'">
+    <app-sidebar></app-sidebar>
+    <router-outlet></router-outlet>
+  </div>
+</main>

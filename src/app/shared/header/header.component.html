@@ -1,0 +1,16 @@
+<header class="header d-flex align-items-center position-fixed">
+    <button class="btn basic" (click)="onClose()">
+        <i class="ms-Icon ms-Icon--GlobalNavButton ms-fontColor-white"></i>
+    </button>
+    <div class="logo mr-auto">
+        <span class="d-block">{{title}}</span>
+    </div>
+    <div ngbDropdown class="d-inline-block custom-dropdown">
+        <button class="btn" id="dropwodn1" ngbDropdownToggle>
+            <img src="../../../assets/images/nav-icon2.png" alt="">
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdown1">
+            <button ngbDropdownItem>Logout</button>
+        </div>
+    </div>
+</header>
