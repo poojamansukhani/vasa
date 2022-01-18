@@ -22,9 +22,9 @@ export class RegisterComponent implements OnInit {
     private alertService: AlertService
   ) { 
      // redirect to home if already logged in
-     if (this.authenticationService.currentUserValue) { 
-      this.router.navigate(['/']);
-    }
+    //  if (this.authenticationService.currentUserValue) { 
+    //   this.router.navigate(['/']);
+    // }
   }
 
   ngOnInit(): void {
@@ -52,12 +52,15 @@ export class RegisterComponent implements OnInit {
           .subscribe(
               data => {
                   this.alertService.success('Registration successful', true);
-                  this.router.navigate(['/login']);
+                  this.router.navigate(['../login']);
+                  console.log("Registered");
               },
               error => {
                   this.alertService.error(error);
                   this.loading = false;
+                  console.log("Registered Not");
               });
+              console.log("Registered Don't");
   }
 
 }

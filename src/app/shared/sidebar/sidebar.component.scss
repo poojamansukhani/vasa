@@ -29,7 +29,7 @@
                 border-left: 4px solid #067fff;
                 opacity: 0;
             }
-            &:hover:before, &.active{
+            &:hover:before, &.active:hover:before{
                 opacity: 1;
                 transition: width 0.2s ease-in 0s;
                 width: 100%;
@@ -48,7 +48,7 @@
                 opacity: 0;
                 transition: all ease-in-out 0.3s;
             }
-            &:hover::after{
+            &:hover::after, &.active:hover::after{
                 opacity: 1;
             }
             a{

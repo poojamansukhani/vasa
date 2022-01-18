@@ -8,7 +8,7 @@ import { MainService } from '../main.service';
 })
 export class HeaderComponent implements OnInit {
   public title = "Vasa";
-  navStatus:boolean = true;
+  navStatus:boolean;
   constructor(
     private appService: MainService,
   ) { }
